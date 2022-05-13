@@ -3,87 +3,80 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jhii <jhii@student.42kl.edu.my>            +#+  +:+       +#+        */
+/*   By: jhii <jhii@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 13:11:30 by jhii              #+#    #+#             */
-/*   Updated: 2021/11/18 20:08:17 by jhii             ###   ########.fr       */
+/*   Updated: 2022/05/13 15:53:56 by jhii             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int	ft_strlen(const char *s)
+int	ft_strlen(char *str)
 {
-	int	count;
+	int	i;
 
-	count = 0;
-	while (s[count] != '\0')
-		count++;
-	return (count);
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
 
-int	ft_getnl(const char *str)
-{
-	int		index;
-	char	*temp;
-
-	if (!str)
-		return (0);
-	index = 0;
-	temp = (char *)str;
-	while (*temp != '\n')
-	{
-		if (*temp == '\0')
-			return (0);
-		temp++;
-		index++;
-	}
-	return (index + 1);
-}
-
-char	*ft_strjoin(const char *s1, const char *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	int		i;
-	int		nlen;
-	char	*str;
+	int		len;
+	char	*res;
 
 	if (!s1 || !s2)
 		return (NULL);
 	i = 0;
-	nlen = ft_strlen((char *)s1) + ft_strlen((char *)s2);
-	str = (char *)malloc(nlen + 1);
-	if (str == NULL)
-		return (NULL);
+	len = ft_strlen(s1) + ft_strlen(s2);
+	res = malloc(sizeof(char) * len + 1);
 	while (*s1)
-		str[i++] = *s1++;
+		res[i++] = *s1++;
 	while (*s2)
-		str[i++] = *s2++;
-	str[i] = '\0';
-	return (str);
+		res[i++] = *s2++;
+	res[i] = '\0';
+	return (res);
 }
 
-char	*ft_substr(const char *s, size_t start, size_t len)
+char	*ft_substr(char *s, int start, int len)
 {
-	size_t	i;
-	size_t	slen;
+	int		i;
+	int		slen;
 	char	*str;
 
-	i = 0;
 	if (!s)
-		return (0);
-	slen = (size_t)ft_strlen(s);
+		return (NULL);
+	i = 0;
+	slen = ft_strlen(s);
 	if (start + len > slen)
 		len = slen - start;
 	if (start > slen)
 		len = 0;
-	str = (char *)malloc(len + 1);
-	if (!str)
-		return (0);
-	while (i < len && s[start + i] != '\0')
+	str = malloc(sizeof(char) * len + 1);
+	while (i < len && s[start + i])
 	{
 		str[i] = s[start + i];
 		i++;
 	}
 	str[i] = '\0';
 	return (str);
+}
+
+int	ft_getnl(char *str)
+{
+	int		i;
+
+	if (!str)
+		return (0);
+	i = 0;
+	while (str[i] != '\n')
+	{
+		if (str[i] == '\0')
+			return (0);
+		i++;
+	}
+	return (i + 1);
 }
