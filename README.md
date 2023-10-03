@@ -17,21 +17,21 @@ Note: The file structure of this project has been modified.
 - `make fclean` - clean and removes `gnl` program
 - `make re` - fclean and recompiles
 
-### Local testing
-
-Uncomment definition of BUFFER_SIZE in [`get_next_line.h`](inc/get_next_line.h).
-
-```
-#define BUFFER_SIZE 500
-```
-
-- `./gnl` - runs the code in [`main.c`](main.c)
-
 To use the library functions in your code, simply include its' header ([`get_next_line.h`](inc/get_next_line.h)):
 
 ```
 #include "get_next_line.h"
 ```
+
+# Local testing
+
+- Uncomment definition of BUFFER_SIZE in [`get_next_line.h`](inc/get_next_line.h).
+
+```
+#define BUFFER_SIZE 500
+```
+
+- after compiling with `make`, run `./gnl` (runs the code in [`main.c`](main.c))
 
 # Gnl Tester
 
