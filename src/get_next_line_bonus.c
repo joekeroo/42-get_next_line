@@ -10,12 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonus.h"
+#include "get_next_line.h"
 
-static char	*ft_printnl(char **storage)
+static char *ft_printnl(char **storage)
 {
-	char	*res;
-	char	*temp;
+	char *res;
+	char *temp;
 
 	res = ft_substr(*storage, 0, ft_getnl(*storage));
 	temp = ft_substr(*storage, ft_getnl(*storage), ft_strlen(*storage));
@@ -25,7 +25,7 @@ static char	*ft_printnl(char **storage)
 	return (res);
 }
 
-static char	*ft_check(int fd, char **storage, int size, char *res)
+static char *ft_check(int fd, char **storage, int size, char *res)
 {
 	if (*storage[0] == '\0' || size < 0 || fd < 0)
 	{
@@ -35,12 +35,12 @@ static char	*ft_check(int fd, char **storage, int size, char *res)
 	return (res);
 }
 
-static char	*ft_combine(int fd, char **storage)
+static char *ft_combine(int fd, char **storage)
 {
-	char	buffer[BUFFER_SIZE + 1];
-	char	*temp;
-	char	*res;
-	int		size;
+	char buffer[BUFFER_SIZE + 1];
+	char *temp;
+	char *res;
+	int size;
 
 	res = NULL;
 	size = 0;
@@ -64,10 +64,10 @@ static char	*ft_combine(int fd, char **storage)
 	return (ft_check(fd, &*storage, size, res));
 }
 
-char	*get_next_line(int fd)
+char *get_next_line_bonus(int fd)
 {
-	static char	*storage[1024];
-	char		*res;
+	static char *storage[1024];
+	char *res;
 
 	res = NULL;
 	if (fd < 0)

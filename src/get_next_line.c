@@ -12,7 +12,7 @@
 
 #include "get_next_line.h"
 
-static char	*ft_check(int fd, char **storage, int size, char *res)
+static char *ft_check(int fd, char **storage, int size, char *res)
 {
 	if (*storage[0] == '\0' || size < 0 || fd < 0)
 	{
@@ -22,12 +22,12 @@ static char	*ft_check(int fd, char **storage, int size, char *res)
 	return (res);
 }
 
-static char	*ft_combine(int fd, char **storage)
+static char *ft_combine(int fd, char **storage)
 {
-	char	buffer[BUFFER_SIZE + 1];
-	char	*temp;
-	char	*res;
-	int		size;
+	char buffer[BUFFER_SIZE + 1];
+	char *temp;
+	char *res;
+	int size;
 
 	res = NULL;
 	size = 0;
@@ -51,11 +51,11 @@ static char	*ft_combine(int fd, char **storage)
 	return (ft_check(fd, &*storage, size, res));
 }
 
-char	*get_next_line(int fd)
+char *get_next_line(int fd)
 {
-	static char	*storage;
-	char		*temp;
-	char		*res;
+	static char *storage;
+	char *temp;
+	char *res;
 
 	res = NULL;
 	if (!storage)
@@ -66,9 +66,8 @@ char	*get_next_line(int fd)
 	res = ft_combine(fd, &storage);
 	if (res != NULL)
 		return (res);
-	else
-		if (storage == NULL)
-			return (res);
+	else if (storage == NULL)
+		return (res);
 	if (storage[0] != '\0' && ft_getnl(storage) > 0)
 	{
 		res = ft_substr(storage, 0, ft_getnl(storage));
