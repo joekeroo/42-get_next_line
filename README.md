@@ -6,7 +6,7 @@ In this project, we will be creating a function that returns a line read from a 
 
 # Project Requirements
 
-|     Functions      |                       Description                       |
+|    Requirements    |                       Description                       |
 | :----------------: | :-----------------------------------------------------: |
 |   Function name    |                      get_next_line                      |
 |     Prototype      |              char \*get_next_line(int fd)               |
