@@ -21,6 +21,9 @@ ${OBJ_PATH}/%.o: ${SRC_PATH}/%.c
 	@mkdir -p ${@D}
 	@${GCC} ${CFLAGS} ${INCLUDES} -c $< -o $@
 
+test:
+	@make re && ./gnl
+
 clean:
 	@${RM} ${OBJ_PATH}
 

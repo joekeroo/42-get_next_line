@@ -12,9 +12,20 @@
 
 #include "get_next_line.h"
 
-int main(void)
+void print_input(void)
+{
+	write(1, "input: ", 8);
+}
+
+void run_gnl(void)
 {
 	char *res = get_next_line(0);
-	printf("\nreturn: %s", res);
+	printf("return: %s", res);
+}
+
+int main(void)
+{
+	print_input();
+	run_gnl();
 	return (0);
 }
