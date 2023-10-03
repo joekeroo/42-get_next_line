@@ -6,13 +6,13 @@ In this project, we will be creating a function that returns a line read from a 
 
 # Project Requirements
 
-|    Requirements    |                          Description                          |
-| :----------------: | :-----------------------------------------------------------: |
-|   Function name    |                         get_next_line                         |
-|     Prototype      |                `char \*get_next_line(int fd)`                 |
-|   Turn in files    | `get_next_line.c`, `get_next_line_utils.c`, `get_next_line.h` |
-|     Parameters     |            `fd`: the file descriptor to read from             |
-| External functions |                   `read`, `malloc`, `free`                    |
+|    Requirements    |                        Description                        |
+| :----------------: | :-------------------------------------------------------: |
+|   Function name    |                       get_next_line                       |
+|     Prototype      |              `char \*get_next_line(int fd)`               |
+|   Turn in files    | `get_next_line.c, get_next_line_utils.c, get_next_line.h` |
+|     Parameters     |          `fd`: the file descriptor to read from           |
+| External functions |                   `read, malloc, free`                    |
 
 # Compilation
 
