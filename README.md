@@ -31,7 +31,7 @@ To use the library functions in your code, simply include its' header ([`get_nex
 #define BUFFER_SIZE 500
 ```
 
-- after compiling with `make`, run `./gnl` (runs the code in [`main.c`](main.c))
+- `make gnl` (runs the code in [`main.c`](main.c))
 
 # Gnl Tester
 
