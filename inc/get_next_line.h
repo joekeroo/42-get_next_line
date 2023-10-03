@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jhii <jhii@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jhii <jhii@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 13:11:30 by jhii              #+#    #+#             */
-/*   Updated: 2022/05/13 15:53:52 by jhii             ###   ########.fr       */
+/*   Updated: 2023/10/03 17:22:32 by jhii             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 #define GET_NEXT_LINE_H
+
+// #define BUFFER_SIZE 500
 
 #include <unistd.h>
 #include <stdio.h>
