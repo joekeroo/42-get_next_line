@@ -2,13 +2,17 @@
 
 Note: The file structure of this project has been modified.
 
+In this project, we will be creating a function that returns a line read from a [file descriptor](https://stackoverflow.com/questions/5256599/what-are-file-descriptors-explained-in-simple-terms).
+
 # Project Requirements
 
-|     Functions      |                      Description                       |
-| :----------------: | :----------------------------------------------------: |
-|    Program name    |                     libftprintf.a                      |
-|   Turn in files    |         Makefile, \*.h, \*/\*.h, \*.c, \*/\*.c         |
-| External functions | malloc, free, write, va_start, va_arg, va_copy, va_end |
+|     Functions      |                       Description                       |
+| :----------------: | :-----------------------------------------------------: |
+|   Function name    |                      get_next_line                      |
+|     Prototype      |              char \*get_next_line(int fd)               |
+|   Turn in files    | get_next_line.c, get_next_line_utils.c, get_next_line.h |
+|     Parameters     |         `fd`: the file descriptor to read from          |
+| External functions |                   read, malloc, free                    |
 
 # Compilation
 
